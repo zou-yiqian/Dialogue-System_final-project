@@ -95,6 +95,11 @@
 - cold
 - rock
 - feather
+- don't know
+- no idea
+- what
+- skip
+- p
 
 ## intent:trial_a1
 - The answer is [blue](yn)
