@@ -1,0 +1,70 @@
+intents:
+  - greet
+  - affirm
+  - deny
+  - goodbye
+  - trial_a1:
+      use_entities: []
+  - dont_know
+  - start:
+      triggers: action_question_setup
+  - answer:
+      triggers: action_question_punchline
+
+forms:
+  - check_form
+
+entities:
+  - yn
+
+slots:
+  yn:
+    type: unfeaturized
+    auto_fill: false
+  jix:
+    type: text
+  time:
+    type: text
+  correct:
+    type: text
+    
+actions:
+- utter_greet
+- utter_tutorial
+- utter_no_trial
+- utter_trial
+- utter_trial_correct
+- utter_trial_wrong
+- utter_ask_yn
+- action_question_setup
+- action_question_punchline
+
+responses:
+  utter_greet:
+  - text: "Hey! Are you the first time to come here?"
+  
+  utter_tutorial:
+  - text: |
+      Then I will make an introduction for you.
+      Here is a nuthouse. You need to be under observation for some days.
+      Every round, I will ask you three questions.
+      If you get two questions right, I will release you.
+      Would you like to have a try now?
+
+  utter_no_trial:
+  - text: "Then we will start."
+  
+  utter_trial:
+  - text: "Ok, let's have a try."
+  
+  utter_trial_correct:
+  - text: "That's easy, right?"
+  
+  utter_trial_wrong:
+  - text: "Sorry..:( You 're wrong. That's fine, you'll be better."
+  
+  utter_ask_yn:
+  - text: "What color is the wind?"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
